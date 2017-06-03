@@ -53,19 +53,21 @@ public class UITabBar : MonoBehaviour {
 	{
 		get
 		{
-            return 0; //Table.gap.x;//间隔
+            return Table.gap.x;//间隔
 		}
 
 		set
 		{
 
-			//Table.gap  = new Vector2(value,value);
+			Table.gap  = new Vector2(value,value);
 		}
 	}
 
 	public int fontSize=35;
 
 	public int normalSize;
+    private float timer = 0f;
+    private float time = 0.5f;
 
 	public enum Direction
 	{
@@ -190,6 +192,7 @@ public class UITabBar : MonoBehaviour {
 //				
 				child.transform.parent = Table.transform;
 				child.transform.localScale = Vector3.one;
+                child.transform.localPosition = Vector3.zero;
 
 				BoxCollider collider = child.AddComponent<BoxCollider>();
 				child.AddComponent<UIEventListener>();
@@ -199,17 +202,21 @@ public class UITabBar : MonoBehaviour {
 				UISprite sprite =NGUITools.AddSprite(child,atlas,spriteName); //;NGUITools.AddWidget<UISprite>(child.transform.gameObject);//
 //				sprite.transform.parent = child.transform;
 				sprite.type=UISprite.Type.Sliced;
-//				sprite.atlas=Resources.Load(atlas.name, typeof(UIAtlas)) as UIAtlas;
-//				sprite.spriteName=spriteName;
-				sprite.transform.localScale =new Vector3(w,h,1);
+                //				sprite.atlas=Resources.Load(atlas.name, typeof(UIAtlas)) as UIAtlas;
+                //				sprite.spriteName=spriteName;
+                sprite.transform.localScale = Vector3.one;
+                sprite.width = w;
+                sprite.height = h;
 
 //				sprite.transform.parent = child.transform;
 
 				UIEventListener.Get(child).onClick= OnItemClick;
 				UILabel label = NGUITools.AddWidget<UILabel>(child);
-				label.font = font;
+				label.bitmapFont = font;
 				label.text=str;
-				label.transform.localScale = new Vector3(fontSize,fontSize,1);
+                label.width = w;
+                label.height = h;
+                label.transform.localScale = Vector3.one;
 				label.transform.localPosition = new Vector3(0,0,-1);
 				child.transform.localPosition = new Vector3(0,0,-1);
 				if(IsOutline)label.effectStyle = UILabel.Effect.Outline;
@@ -217,17 +224,16 @@ public class UITabBar : MonoBehaviour {
 			}
 			SelectedIndex=0;
 		}
-		Table.repositionNow = true;
+        Table.Reposition();
 
-		//Table.Reposition();
-
-	}
+    }
 
 
+    
+        
 	void getTexts()
 	{
-
-		if(languages!="")
+        if (languages!="")
 		{
 			texts="";
 			string[] strs= languages.Split(',');
@@ -251,16 +257,18 @@ public class UITabBar : MonoBehaviour {
 			{
 				items[i].GetComponentInChildren<UISprite>().spriteName= selectSpriteName;
 				items[i].GetComponentInChildren<UILabel>().color= SelectedColor;
-				items[i].GetComponentInChildren<UILabel>().transform.localScale= new Vector3(fontSize,fontSize,1);
-				items[i].GetComponentInChildren<UILabel>().transform.localPosition = new Vector3(SelectedTextPos.x,SelectedTextPos.y,-1);
+                items[i].GetComponentInChildren<UILabel>().fontSize = fontSize;
+                //items[i].GetComponentInChildren<UILabel>().transform.localScale= new Vector3(fontSize,fontSize,1);
+                items[i].GetComponentInChildren<UILabel>().transform.localPosition = new Vector3(SelectedTextPos.x,SelectedTextPos.y,-1);
 
 			}
 			else
 			{
 				items[i].GetComponentInChildren<UISprite>().spriteName= spriteName;
 				items[i].GetComponentInChildren<UILabel>().color= NormalColor;
-				items[i].GetComponentInChildren<UILabel>().transform.localScale= new Vector3(normalSize,normalSize,1);
-				items[i].GetComponentInChildren<UILabel>().transform.localPosition = new Vector3(NormalTextPos.x,NormalTextPos.y,-1);
+                items[i].GetComponentInChildren<UILabel>().fontSize = normalSize;
+                //items[i].GetComponentInChildren<UILabel>().transform.localScale= new Vector3(normalSize,normalSize,1);
+                items[i].GetComponentInChildren<UILabel>().transform.localPosition = new Vector3(NormalTextPos.x,NormalTextPos.y,-1);
 
 			}
 		}
@@ -285,6 +293,8 @@ public class UITabBar : MonoBehaviour {
 
 		if (onClick != null) onClick(SelectedIndex);
 	}
+
+    
 
 }
 

@@ -37,14 +37,14 @@ public class UITabBarInspector : Editor {
 				mTabBar.texts =texts;
 				OnSet();
 			}
-			GUILayout.Label("Language Keys");
-			string languages = string.IsNullOrEmpty(mTabBar.languages) ? "" : mTabBar.languages;
-			languages = EditorGUILayout.TextArea(mTabBar.languages, GUI.skin.textArea, GUILayout.Height(50.0f));
-			if(languages!=mTabBar.languages)
-			{
-				mTabBar.languages=languages;
-				OnSet();
-			}
+			//GUILayout.Label("Language Keys");
+			//string languages = string.IsNullOrEmpty(mTabBar.languages) ? "" : mTabBar.languages;
+			//languages = EditorGUILayout.TextArea(mTabBar.languages, GUI.skin.textArea, GUILayout.Height(50.0f));
+			//if(languages!=mTabBar.languages)
+			//{
+			//	mTabBar.languages=languages;
+			//	OnSet();
+			//}
 
 			GUILayout.BeginHorizontal();
 			int w = EditorGUILayout.IntField("ItemWidth", mTabBar.w, GUILayout.Width(200f));
@@ -209,7 +209,8 @@ public class UITabBarInspector : Editor {
 	}
 	void OnSelectFont (Object obj)
 	{
-		if (mTabBar != null)
+        UIFont font = obj as UIFont;
+		if (mTabBar != null && mTabBar.font != font)
 		{
 			NGUIEditorTools.RegisterUndo("Font Selection", mTabBar);
 			bool resize = (mTabBar.font == null);
@@ -221,7 +222,8 @@ public class UITabBarInspector : Editor {
 
 	void OnSelectAtlas (Object obj)
 	{
-		if (mTabBar != null)
+        UIAtlas atl = obj as UIAtlas;
+		if (mTabBar != null && mTabBar.atlas != atl)
 		{
 			NGUIEditorTools.RegisterUndo("Atlas Selection", mTabBar);
 			bool resize = (mTabBar.atlas == null);

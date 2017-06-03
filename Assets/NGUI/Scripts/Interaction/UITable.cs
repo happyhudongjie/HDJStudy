@@ -16,8 +16,8 @@ using System.Collections.Generic;
 public class UITable : UIWidgetContainer
 {
 	public delegate void OnReposition ();
-
-	public enum Direction
+    public Vector2 gap = Vector2.zero;
+    public enum Direction
 	{
 		Down,
 		Up,
@@ -227,17 +227,27 @@ public class UITable : UIWidgetContainer
 			Vector3 pos = t.localPosition;
 			pos.x = xOffset + b.extents.x - b.center.x;
 			pos.x -= Mathf.Lerp(0f, b.max.x - b.min.x - br.max.x + br.min.x, po.x) - padding.x;
+            if (columns != 0)
+            {
+                pos.x += gap.x * (i % columns);
+            }
+            else
+            {
+                pos.x += gap.x * i;
+            }
 
-			if (direction == Direction.Down)
+            if (direction == Direction.Down)
 			{
 				pos.y = -yOffset - b.extents.y - b.center.y;
 				pos.y += Mathf.Lerp(b.max.y - b.min.y - bc.max.y + bc.min.y, 0f, po.y) - padding.y;
-			}
+                if (columns != 0) pos.y -= gap.y * Mathf.Floor(i / columns);
+            }
 			else
 			{
 				pos.y = yOffset + b.extents.y - b.center.y;
 				pos.y -= Mathf.Lerp(0f, b.max.y - b.min.y - bc.max.y + bc.min.y, po.y) - padding.y;
-			}
+                if (columns != 0) pos.y += gap.y * Mathf.Floor(i / columns);
+            }
 
 			xOffset += br.size.x + padding.x * 2f;
 
@@ -288,6 +298,8 @@ public class UITable : UIWidgetContainer
 		}
 	}
 
+   
+
 	/// <summary>
 	/// Recalculate the position of all elements within the table, sorting them alphabetically if necessary.
 	/// </summary>
@@ -300,8 +312,7 @@ public class UITable : UIWidgetContainer
 		mReposition = false;
 		Transform myTrans = transform;
 		List<Transform> ch = GetChildList();
-		if (ch.Count > 0) RepositionVariableSize(ch);
-
+        if (ch.Count > 0) { RepositionVariableSize(ch);} 
 		if (keepWithinPanel && mPanel != null)
 		{
 			mPanel.ConstrainTargetToBounds(myTrans, true);

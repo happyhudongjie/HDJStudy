@@ -34,6 +34,17 @@ public class OpenScene : Editor {
     }
 
 
+    [MenuItem("OpenScene/NGUITool")]
+    public static void OpenNGUITool()
+    {
+        int index = GetSceneIndex("NGUITool");
+        if (index == -1)
+            return;
+
+        OpenScenes(index);
+    }
+
+
     public static int GetSceneIndex(string name)
     {
         int index = -1;
