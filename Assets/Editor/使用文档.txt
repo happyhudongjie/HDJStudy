@@ -1,0 +1,2 @@
+1.FindScene.cs  帮助寻找在Hierarchy面板里面的物体
+2.OpenScene.cs  快速打开场景
