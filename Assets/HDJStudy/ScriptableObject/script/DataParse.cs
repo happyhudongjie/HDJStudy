@@ -3,6 +3,6 @@ using System.Collections.Generic;
 
 public class DataParse : ScriptableObject {
 
-    public string[] theData;
+    public List<string> theData;
 	
 }
