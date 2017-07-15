@@ -14,6 +14,18 @@ public class GameManger : MonoBehaviour {
         isInit = true;
     }
 	
+
+    void Update()
+    {
+        if (mgrList.Count > 0)
+        {
+            for(int i = 0; i < mgrList.Count; i++)
+            {
+                mgrList[i].OnUpdate();
+            }
+        }
+    }
+
     /// <summary>
     /// 注册管理器
     /// </summary>
@@ -49,5 +61,10 @@ public class GameManger : MonoBehaviour {
             }
         }
         return mgr;
+    }
+
+    void OnDestroy()
+    {
+        mgrList.Clear();
     }
 }

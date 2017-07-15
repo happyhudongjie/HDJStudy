@@ -20,4 +20,10 @@ public class LogTest : GameStateMgr {
             Debug.Log(str+"\t进入重写的Excute~~~~~~~~~");
         }
     }
+
+    public override void OnUpdate()
+    {
+        if(Input.GetKeyDown(KeyCode.D)) 
+            Debug.Log("胡冬杰大帅比");
+    }
 }
