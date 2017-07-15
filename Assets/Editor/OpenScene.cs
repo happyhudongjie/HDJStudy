@@ -56,6 +56,17 @@ public class OpenScene : Editor {
     }
 
 
+    [MenuItem("OpenScene/Log")]
+    public static void OpenLog()
+    {
+        int index = GetSceneIndex("Log");
+        if (index == -1)
+            return;
+
+        OpenScenes(index);
+    }
+
+
 
     public static int GetSceneIndex(string name)
     {
