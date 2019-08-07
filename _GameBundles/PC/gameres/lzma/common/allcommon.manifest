@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2328931171
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 18d980afafe2f42d9001100ce4bc090d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c91f7fd667837e1859ec7e262472823f
+HashAppended: 0
+ClassTypes:
+- Class: 241
+  Script: {instanceID: 0}
+- Class: 243
+  Script: {instanceID: 0}
+- Class: 245
+  Script: {instanceID: 0}
+Assets:
+- Assets/HDJStudy/AssetBundleBuilder/AudioMixer/djAudioMixer.mixer
+Dependencies: []

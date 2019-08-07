@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 3225210372
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ca4de5579f44079eaf3b0276dad304df
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ab8f72dc9e0b0fead577f2fe68cdef32
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/HDJStudy/AssetBundleBuilder/UI/Atlas/abAtlas.prefab
+Dependencies: []

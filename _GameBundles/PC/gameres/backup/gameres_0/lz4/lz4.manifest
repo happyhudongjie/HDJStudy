@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 1780783870
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: uiprefab/sprite
+      Dependencies: {}
+    Info_1:
+      Name: uiatlas/abatlas
+      Dependencies: {}
+    Info_2:
+      Name: common/allcommon
+      Dependencies: {}

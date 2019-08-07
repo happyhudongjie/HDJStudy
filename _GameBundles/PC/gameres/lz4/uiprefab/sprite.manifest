@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 2100849760
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0f095f1186d1acf1c479b5502f931c68
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1eff385121ea323f3680758db7529353
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/HDJStudy/AssetBundleBuilder/UI/Prefabs/Sprite.prefab
+Dependencies: []

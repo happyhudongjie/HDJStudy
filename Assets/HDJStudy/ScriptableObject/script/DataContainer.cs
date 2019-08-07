@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using UnityEditor;
-
 using System.Collections.Generic;
-
 using System.IO;
 using Kent.Boogaart.KBCsv;
 
@@ -51,3 +49,4 @@ public class DataContainer  {
     }
 
 }
+#endif

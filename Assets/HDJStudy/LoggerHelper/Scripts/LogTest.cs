@@ -23,7 +23,9 @@ public class LogTest : GameStateMgr {
 
     public override void OnUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.D)) 
-            Debug.Log("胡冬杰大帅比");
-    }
+		if (Input.GetKeyDown (KeyCode.D)) {
+			Debug.Log("胡冬杰大帅比1111");
+			GameDebuger.Log ("胡冬杰大帅比22222");
+		}
+	}
 }

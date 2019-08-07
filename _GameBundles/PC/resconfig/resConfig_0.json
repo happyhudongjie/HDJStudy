@@ -1,0 +1,50 @@
+
+{
+    "servertType" : 0,
+    "Version"     : 0,
+    "lz4CRC"      : 1780783870,
+    "lzmaCRC"     : 4149623760,
+    "tileTexCRC"  : 0,
+    "BuildTime"   : 1571997459707,
+    "compressType" : 2,
+    "TotalFileSize" : 213200,
+    "isMiniRes"     : false,
+    "Manifest"      : {
+        "uiprefab/sprite" : {
+            "bundleName" : "uiprefab/sprite",
+            "CRC"        : 2100849760,
+            "Hash"       : "0f095f1186d1acf1c479b5502f931c68",
+            "remoteZipType" : 2,
+            "MD5"           : "3D8B5181AB4DC11485C992ECB7DEFE63",
+            "size"          : 2870,
+            "isPackageRes"  : false,
+            "preload"       : false,
+            "Dependencies"  : [
+            ]
+        },
+        "uiatlas/abatlas" : {
+            "bundleName" : "uiatlas/abatlas",
+            "CRC"        : 3225210372,
+            "Hash"       : "ca4de5579f44079eaf3b0276dad304df",
+            "remoteZipType" : 2,
+            "MD5"           : "69BEEE7FD2964AC9E957CE11FC8365E8",
+            "size"          : 207729,
+            "isPackageRes"  : false,
+            "preload"       : false,
+            "Dependencies"  : [
+            ]
+        },
+        "common/allcommon" : {
+            "bundleName" : "common/allcommon",
+            "CRC"        : 2328931171,
+            "Hash"       : "9e4215068f90a6f5997657dddb9b7832",
+            "remoteZipType" : 2,
+            "MD5"           : "E4638393484B0F0E5065A890F9CB775C",
+            "size"          : 2601,
+            "isPackageRes"  : false,
+            "preload"       : false,
+            "Dependencies"  : [
+            ]
+        }
+    }
+}
