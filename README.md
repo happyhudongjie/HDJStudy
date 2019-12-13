@@ -10,3 +10,5 @@ LoggerHelper：后台日志打印和状态机
 AssetBundleBuilder：资源自动更新ab名工具
 
 JSTimer: 计时器
+
+AssetBundleBuilder：自动打包工具（GameResource->AssetBundleBuilder）
